@@ -12,6 +12,9 @@ import Chat from './pages/chat'
 
 function App() {
 
+  console.log(process.env.REACT_APP_WS_URL)
+  console.log(process.env.REACT_APP_AUTH_URL)
+
   const [user, setUser] = useState(null)
 
   return (
