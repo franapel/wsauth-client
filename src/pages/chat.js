@@ -2,7 +2,7 @@ import { io } from 'socket.io-client'
 import { useEffect, useMemo, useState } from 'react'
 import ChatComp from '../components/Chat'
 
-const WS_URL = process.env.WS_URL || 'http://localhost:80'
+const WS_URL = process.env.REACT_APP_WS_URL || 'http://localhost:80'
 
 const Chat = ( { user } ) => {
 
