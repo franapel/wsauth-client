@@ -2,7 +2,7 @@ import { io } from 'socket.io-client'
 import { useEffect, useMemo, useState } from 'react'
 import ChatComp from '../components/Chat'
 
-const WS_URL = process.env.REACT_APP_WS_URL || 'http://localhost:80'
+const WS_URL = process.env.REACT_APP_WS_URL
 
 const Chat = ( { user } ) => {
 
@@ -12,7 +12,8 @@ const Chat = ( { user } ) => {
 
     useEffect(() => {
         socket.on('connect', () => {
-            socket.emit('authenticate', user ? {token: user.token} : {token: 'no token'})
+            socket.emit('authenticate', user ? 
+                {user_id: user.id, token: user.token} : {user_id: '', token: 'no token'})
             console.log(socket.id) // 'G5p5...'
         })
         socket.on('msg-response', (resMsg) => {

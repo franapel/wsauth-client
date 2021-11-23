@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-const AUTH_URL = process.env.REACT_APP_AUTH_URL || 'http://localhost:5000'
+const AUTH_URL = process.env.REACT_APP_AUTH_URL
 
 const Home = ({ user, setUser }) => {
 
